@@ -1,0 +1,57 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script>
+            $.fn.circle_me = function(options) {
+                console.log('Init circle me');
+                var _style = {
+                    border: '1px solid #DDD',
+                    borderRadius: '50%',
+                    display: 'inline-block',
+                    height:"200px",
+                    width:"200px"
+                };
+                
+                _style = $.extend( _style, options);
+                
+                return $(this).each(function(){
+                            $(this).css(_style);
+                            var _bg = $(this).attr('src');
+                            $(this).css({"backgroundImage":_bg});
+                        });
+            }
+            $(document).ready(function(){
+                $('.circle_me').circle_me();
+            });
+        </script>
+        <style>
+
+            .circle {
+                border: 1px solid #333;
+                border-radius: 50%;
+                display: inline-block;
+            }
+            .circle img {
+                border-radius: 50%;
+                display: block;
+            }
+            .background-circle {
+                background-image: url( 'https://fbcdn-sphotos-a-a.akamaihd.net/hphotos-ak-ash3/67563_10151525052674927_2120163905_n.jpg' );
+                height: 200px;
+                width: 200px;
+            }
+        </style>
+    </head>
+    <body>
+        <div>TODO write content</div>
+        
+        <img class="circle_me" src="https://fbcdn-sphotos-a-a.akamaihd.net/hphotos-ak-ash3/67563_10151525052674927_2120163905_n.jpg" />
+    </body>
+</html>
