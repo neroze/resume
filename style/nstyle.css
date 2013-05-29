@@ -1,0 +1,42 @@
+@import url(http://fonts.googleapis.com/css?family=Marck+Script);
+/* CSS Document */
+body{background: url("img/bg.png"); font-family:'Lucida Grande', 'Lucida Sans Unicode', Tahoma, Arial, san-serif;}
+#profile_img{
+    position: absolute;
+    top:10%;
+    left:10%; 
+}
+.intro-section{
+    position: absolute;
+    top:15%;
+    left: 25%;
+    line-height: 26px;
+    font-size: 13px;
+    width: 50%;
+    
+}
+.intro-section h3{
+    font-size: 20px;
+}
+.intro-section h1{
+    font-size: 27px;
+    padding:10px 0;
+}
+#weapons{
+  
+    width: 60%;
+    position: absolute;
+    top:270px;
+    left: 25%;
+    height: 600px;
+    overflow: hidden;
+    
+}
+#weapons img{
+    position: relative;
+}
+#weapons h1{
+      padding: 10px;
+      margin: 10px;
+      font-size: 40px;
+}
