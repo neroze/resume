@@ -1,58 +1,64 @@
-<!--
-To change this template, choose Tools | Templates
-and open the template in the editor.
--->
 <!DOCTYPE html>
 <html>
     <head>
         <title></title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script src="lib/jquery-twitter-plugin.js"></script>
+        <script src="lib/custom/circle.me.js"></script>
         <script>
-            $.fn.circle_me = function(options) {
-                console.log('Init circle me');
-                var _style = {
-                    border: '1px solid #DDD',
-                    borderRadius: '50%',
-                    display: 'inline-block',
-                    height:"200px",
-                    width:"200px"
-                };
-                
-                _style = $.extend( _style, options);
-                
-                return $(this).each(function(){
-                            $(this).css(_style);
-                            var _bg = $(this).attr('src');
-                            $(this).css({"backgroundImage":_bg});
-                        });
-            }
-            $(document).ready(function(){
-                $('.circle_me').circle_me();
+             $('#weapons').hide();
+            $(document).ready(function() {
+                $('.circle_me').circle_me({width: "150px", height: "150px"});
+                randomizer();
+                setInterval(randomizer,10000);
+               
             });
+            
+            function randomizer(){
+              $('#weapons img').hide();
+                var _random = 100;
+                $('#weapons img').each(function(index){
+                    _random = Math.floor((Math.random()*100)+60);
+                   if(_random < 130){
+                            _random = _random + 50;
+                   }
+                    $(this).circle_me({width: _random, height: _random,padding:(_random - 130)}).show(index*1000);
+                });
+                
+            }
+            
+          
+           
         </script>
-        <style>
 
-            .circle {
-                border: 1px solid #333;
-                border-radius: 50%;
-                display: inline-block;
-            }
-            .circle img {
-                border-radius: 50%;
-                display: block;
-            }
-            .background-circle {
-                background-image: url( 'https://fbcdn-sphotos-a-a.akamaihd.net/hphotos-ak-ash3/67563_10151525052674927_2120163905_n.jpg' );
-                height: 200px;
-                width: 200px;
-            }
+        <link rel="stylesheet" type="text/css" href="style/reset.css"/>
+        <link rel="stylesheet" type="text/css" href="style/nstyle.css"/>
+        <style>
+            body{background: url("img/bg.png"); font-family:'Lucida Grande', 'Lucida Sans Unicode', Tahoma, Arial, san-serif;}
         </style>
+
     </head>
     <body>
-        <img class="circle_me" src="https://fbcdn-sphotos-a-a.akamaihd.net/hphotos-ak-ash3/67563_10151525052674927_2120163905_n.jpg" />
-		<div>
-			 <img class="circle_me" src="https://fbcdn-sphotos-a-a.akamaihd.net/hphotos-ak-ash3/67563_10151525052674927_2120163905_n.jpg" />
-		</div>
+        <div id="wrap">
+            <img id="profile_img" class="circle_me" src="https://fbcdn-sphotos-a-a.akamaihd.net/hphotos-ak-ash3/67563_10151525052674927_2120163905_n.jpg" />
+            <div class="intro-section">
+               <h3> Heeeeeeloooz ! </h3> I'm
+               <h1> &lt; Maharjan <span style="color:#459c0c;">Niraj</span> /&gt;,</h1>
+                a freelance web developer and designer from Kathmandu, Nepal. I specialize in WordPress, Codeigniter, JQuery development and generally making things that are awesome. I also collaborate with other web design companies on various projects. 
+            </div>
+            <div id="weapons">
+                <h1>Weapon of the Choice </h1>
+                <img src="img/codeigniter.png" />
+                <img src="img/drupal-logo.gif" />
+                <img src="img/sencha.jpg" />
+                <img src="img/images.jpg" />
+                <img src="img/phonegap.jpg" />
+                <img src="img/java.jpg" />
+                <img src="img/wordpress.png" />
+                <img src="img/jquery_logo.jpg" />
+            </div>
+        </div>
+
     </body>
 </html>
