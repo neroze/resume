@@ -22,6 +22,7 @@ var playSound = function () {
     setTimeout(function () {
         audio.play();
     }, 200);
+	return false;
 };
 
 playBtn.addEventListener('click', playSound, false);
