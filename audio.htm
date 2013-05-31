@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>HTML5 Audio Test - Load - jsFiddle demo by dsuket</title>
+  
+  <script type='text/javascript' src='/js/lib/dummy.js'></script>
+  
+  
+  
+  <link rel="stylesheet" type="text/css" href="/css/result-light.css">
+  
+  <style type='text/css'>
+    
+  </style>
+  
+
+
+<script type='text/javascript'>//<![CDATA[ 
+window.onload=function(){
+var playBtn = document.getElementById('play');
+var stopBtn = document.getElementById('stop');
+
+var playSound = function () {
+    audio.load();
+    setTimeout(function () {
+        audio.play();
+    }, 200);
+};
+
+playBtn.addEventListener('click', playSound, false);
+stopBtn.addEventListener('click', function () {
+    audio.pause()
+}, false);
+}//]]>  
+
+</script>
+
+
+</head>
+<body>
+  <body>
+     <h1>Audio Test</h1>
+
+    <p>Load and Timer example</p>
+    <div>
+        <audio id="audio" src="http://5.39.66.196:8073/;stream.mp3" preload="auto"></audio>
+        <button id="play">Play</button>
+        <button id="stop">Stop</button>
+    </div>
+</body>
+  
+</body>
+
+
+</html>
